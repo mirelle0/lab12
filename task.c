@@ -8,10 +8,10 @@ int task1()
     setlocale(LC_ALL, "RUS");
     char fname[20] = "number.txt"; 
     FILE* out; 
-    puts("Создание файла");
+    puts("РЎРѕР·РґР°РЅРёРµ С„Р°Р№Р»Р°");
     if ((out = fopen(fname, "a")) == NULL)
     {
-        printf("Ошибка открытия файла для записи");
+        printf("РћС€РёР±РєР° РѕС‚РєСЂС‹С‚РёСЏ С„Р°Р№Р»Р° РґР»СЏ Р·Р°РїРёСЃРё");
         return 0;
     }
     fprintf(out, "%d\n", 5); 
@@ -29,18 +29,18 @@ int task2()
     double start, end, step, x, y;
     double c;
 
-    printf("=== Табулирование функции y = x - 3*cos^2(1.04x) ===\n");
-    printf("Введите начало интервала:");
+    printf("=== РўР°Р±СѓР»РёСЂРѕРІР°РЅРёРµ С„СѓРЅРєС†РёРё y = x - 3*cos^2(1.04x) ===\n");
+    printf("Р’РІРµРґРёС‚Рµ РЅР°С‡Р°Р»Рѕ РёРЅС‚РµСЂРІР°Р»Р°:");
     scanf("%lf", &start);
-    printf("Введите конец интервала:");
+    printf("Р’РІРµРґРёС‚Рµ РєРѕРЅРµС† РёРЅС‚РµСЂРІР°Р»Р°:");
     scanf("%lf", &end);
-    printf("Введите шаг:");
+    printf("Р’РІРµРґРёС‚Рµ С€Р°Рі:");
     scanf("%lf", &step);
 
-    printf("\nВыберите действие:\n");
-    printf("  1) Записать в новый файл\n");
-    printf("  2) Дописать в существующий файл\n");
-    printf("Ваш выбор: ");
+    printf("\nР’С‹Р±РµСЂРёС‚Рµ РґРµР№СЃС‚РІРёРµ:\n");
+    printf("  1) Р—Р°РїРёСЃР°С‚СЊ РІ РЅРѕРІС‹Р№ С„Р°Р№Р»\n");
+    printf("  2) Р”РѕРїРёСЃР°С‚СЊ РІ СЃСѓС‰РµСЃС‚РІСѓСЋС‰РёР№ С„Р°Р№Р»\n");
+    printf("Р’Р°С€ РІС‹Р±РѕСЂ: ");
     scanf("%d", &choice);
 
     if (choice == 1) {
@@ -50,7 +50,7 @@ int task2()
         out = fopen(fname, "at");
     }
 
-    fprintf(out, "--- y = x - 3*cos^2(1.04x), x = [%.2f; %.2f], шаг = %.2f ---\n", start, end, step);
+    fprintf(out, "--- y = x - 3*cos^2(1.04x), x = [%.2f; %.2f], С€Р°Рі = %.2f ---\n", start, end, step);
     fprintf(out, "%10s %15s\n", "x", "y");
 
     for (x = start; x <= end + step / 1000.0; x += step) {
@@ -61,7 +61,7 @@ int task2()
     fprintf(out, "\n");
 
     fclose(out);
-    printf("\nРезультат записан в %s\n", fname);
+    printf("\nР РµР·СѓР»СЊС‚Р°С‚ Р·Р°РїРёСЃР°РЅ РІ %s\n", fname);
     return 0;
 }
 
